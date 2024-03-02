@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
 }
 
-body {
-    color: rgb(var(--foreground-rgb));
+.showcaseImage {
+    @apply object-fill rounded shadow-sm shadow-blue-950;
 }
 
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
+.name {
+    font-size: 6rem;
+    @apply text-gray-300;
+}
+
+.featureDescriptor {
+    text-align: left;
 }

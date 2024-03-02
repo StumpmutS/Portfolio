@@ -6,6 +6,7 @@ import hexGen from "../../public/Hex Gen Speed.gif";
 import menu from "../../public/AATMenu.png";
 import gameplay from "../../public/AATGameplay.png";
 import Image from "next/image";
+import AboutMe from "@/components/aboutMe";
 
 export default function Home() {
     return (
@@ -13,8 +14,9 @@ export default function Home() {
             <div className="shadow-md z-50 relative shadow-black bg-[url('../../public/stacked-waves-haikei.png')] bg-cover bg-no-repeat">
                 <Drew className="p-8"/>
             </div>
-            <div className="bg-blue-950">
-                <div className={`p-8 grid grid-cols-3 auto-rows-fr gap-8`}>
+            <div className="p-8 bg-blue-950 grid grid-cols-1 gap-8">
+                <AboutMe />
+                <div className="grid grid-cols-3 auto-rows-fr gap-8">
                     <FeatureCard visuals={<Image className="showcaseImage" src={lineRenderer} alt="Line Renderer"/>} description="Custom world-space line renderer using bezier curves and dynamic mesh generation systems"/>
                     <FeatureCard visuals={<Image className="showcaseImage" src={dragon} alt="Dragon"/>} description="Developed a solid foundational knowledge of 3D principles by learning how to model, texture, rig, and animate assets in Blender, then tie in everything on the art side with the gameplay"/>
                     <FeatureCard visuals={<Image className="showcaseImage" src={hexGen} alt="Hex Gen"/>} description="Unity editor extension for generating 3D hexagonal grids from an interactable 2D interface"/>

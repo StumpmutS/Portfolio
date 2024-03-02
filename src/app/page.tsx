@@ -14,7 +14,7 @@ export default function Home() {
                 <Drew className="p-8"/>
             </div>
             <div className="bg-blue-950">
-                <div className={`p-8 grid grid-cols-4 auto-rows-fr gap-8`}>
+                <div className={`p-8 grid grid-cols-3 auto-rows-fr gap-8`}>
                     <FeatureCard visuals={<Image className="showcaseImage" src={lineRenderer} alt="Line Renderer"/>} description="Custom world-space line renderer using bezier curves and dynamic mesh generation systems"/>
                     <FeatureCard visuals={<Image className="showcaseImage" src={dragon} alt="Dragon"/>} description="Developed a solid foundational knowledge of 3D principles by learning how to model, texture, rig, and animate assets in Blender, then tie in everything on the art side with the gameplay"/>
                     <FeatureCard visuals={<Image className="showcaseImage" src={hexGen} alt="Hex Gen"/>} description="Unity editor extension for generating 3D hexagonal grids from an interactable 2D interface"/>

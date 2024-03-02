@@ -11,10 +11,24 @@
 
 .name {
     font-size: 6rem;
-    @apply text-gray-300;
+    font-weight: 500;
+    @apply text-[#ffb038];
 }
 
 .featureDescriptor {
     text-align: left;
     font-weight: 500;
+}
+
+.videoWrapper {
+    position: relative; 
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+}
+.videoWrapper iframe {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
 }

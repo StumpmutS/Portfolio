@@ -5,12 +5,12 @@ import github from "../../public/github-mark-white.png";
 import linkedin from "../../public/In-White-128@2x.png";
 import mail from "../../public/mail-2569.png";
 
-export default function Drew() {
+export default function Drew(props: {className?: string}) {
     return (
-        <div>
-            <div className="flex border-y-4 border-r-4 border-[#ffffff] shadow-sm shadow-black backdrop-blur-md rounded-full items-center space-x-8 w-auto h-28">
+        <div className={props.className}>
+            <div className="flex border-y-4 border-r-4 border-gray-200 shadow-sm shadow-black backdrop-blur-md rounded-full items-center space-x-8 w-auto h-28">
                 <div className="relative w-28 h-28">
-                    <Image className="rounded-full object-fill border-4 border-[#ffffff]" src={headshot} alt="Drew headshot"/>
+                    <Image className="rounded-full object-fill border-4 border-gray-200" src={headshot} alt="Drew headshot"/>
                 </div>
                 <h1 className="name">Drew Moulton</h1>
                 <IconLink link="https://github.com/StumpmutS" icon={<Image src={github} alt="GitHub"/>} size={20}/>

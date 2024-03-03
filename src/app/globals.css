@@ -9,8 +9,20 @@
     @apply object-fill rounded shadow-sm shadow-blue-950;
 }
 
+.pageBar {
+    @apply shadow-md z-50 relative shadow-black bg-cover bg-no-repeat;
+}
+
+a {
+    @apply text-sky-700;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 h1 {
-    font-size: 5rem;
+    font-size: 5.5rem;
     font-weight: 500;
     @apply text-[#ffb038];
 }
@@ -18,7 +30,13 @@ h1 {
 h2 {
     font-size: 4rem;
     font-weight: 500;
-    @apply text-[#d29a47];
+    @apply text-[#000000];
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    @apply text-[#000000];
 }
 
 .featureDescriptor {
@@ -37,4 +55,17 @@ h2 {
     left: 0; 
     width: 100%; 
     height: 100%;
+}
+
+.mirrorV {
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipV;
+    -ms-filter: "FlipV";
+}
+
+.HF {
+    @apply p-4 rounded bg-white;
 }

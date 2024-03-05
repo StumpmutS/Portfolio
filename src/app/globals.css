@@ -47,23 +47,25 @@ a:hover {
 h1 {
     font-size: 6vw;
     font-weight: 500;
-    @apply text-[#ffb038];
+    @apply text-[#000];
 }
 
 h2 {
     font-size: clamp(1.8rem, 4.5vw, 4.5vw);
     font-weight: 500;
-    @apply text-[#000000];
 }
 
 h3 {
     font-size: clamp(1.2rem, 2.5vw, 2.5vw);
     font-weight: 500;
-    @apply text-[#000000];
 }
 
 p {
     font-size: clamp(.6rem, 1.25vw, 1.25vw);
+}
+
+h2, h3, p {
+    @apply text-gray-900;
 }
 
 .featureDescriptor {

@@ -37,12 +37,22 @@
 }
 
 a {
-    @apply text-sky-700;
+    @apply text-[#0000EE];
+}
+
+a:visited {
+    @apply text-[#551A8B];
 }
 
 a:hover {
     text-decoration: underline;
 }
+
+.linkIcon {
+    width: clamp(.6rem, 1.25vw, 1.25vw);
+    @apply text-blue-950;
+}
+
 
 h1 {
     font-size: 6vw;

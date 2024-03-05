@@ -12,8 +12,8 @@ export default function Additional() {
         <div className="grid grid-cols-3 auto-rows-min gap-dmain">
             <HighlightCard title="AA Assets" media={<Image className="showcaseImage" src={aatScroll} alt="AA Assets"/>} description=""/>
             <HighlightCard title="Procedural Textures" media={<Image className="showcaseImage" src={serpent} alt="Procedural Textures"/>} description=""/>
-            <HighlightCard title="Dragon" media={<Image className="showcaseImage" src={dragonWalk} alt="Dragon"/>} description=""/>
-            <HighlightCard title="Physics & Simulations" media={<Image className="showcaseImage" src={donuts} alt="Physics & Simulations"/>} description=""/>
+            <HighlightCard title="Animation" media={<Image className="showcaseImage" src={dragonWalk} alt="Animation"/>} description=""/>
+            <HighlightCard title="Physics & Simulation" media={<Image className="showcaseImage" src={donuts} alt="Physics & Simulation"/>} description=""/>
             <HighlightCard title="AA Map" media={<Image className="showcaseImage" src={map} alt="AA Map"/>} description=""/>
             <HighlightCard title="Sculpting" media={<Image className="showcaseImage" src={angryFace} alt="Sculpting"/>} description=""/>
         </div>

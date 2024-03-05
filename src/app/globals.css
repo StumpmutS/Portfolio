@@ -51,12 +51,12 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(1.8rem, 4.5vw, 4.5vw);
+    font-size: clamp(1rem, 4.5vw, 4.5vw);
     font-weight: 500;
 }
 
 h3 {
-    font-size: clamp(1.2rem, 2.5vw, 2.5vw);
+    font-size: clamp(.8rem, 2.5vw, 2.5vw);
     font-weight: 500;
 }
 

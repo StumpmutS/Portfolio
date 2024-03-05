@@ -14,9 +14,13 @@ export default function HighlightCard(props: {className?: string, bg?: string, t
                 {props.title ? <h3>{props.title}</h3> : false }
                 {props.media ? props.media : false}
                 {props.link ? props.link : false}
-                <div className="shadow-sm shadow-blue-950 backdrop-blur-2xl rounded">
-                    <p className="p-dcardDetail featureDescriptor">{props.description ? props.description : false}</p>
-                </div>
+                {
+                    props.description && (
+                        <div className="shadow-sm shadow-blue-950 backdrop-blur-2xl rounded">
+                            <p className="p-dcardDetail featureDescriptor">{props.description}</p>
+                        </div>
+                    )
+                }
             </center>
         </div>
     );

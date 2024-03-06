@@ -34,6 +34,13 @@ export default function AnimalArmies() {
                     description="Developed a solid foundational knowledge of 3D principles by learning how to model, texture, rig, and animate assets in Blender, then tie in everything on the art side with the gameplay"
                 />
                 <HighlightCard 
+                    className="col-span-3"
+                    title="Dijkstra Shortest Path Variation"
+                    media={<div className="videoWrapper"><iframe className="showcaseImage" src="https://www.youtube.com/embed/UMd4voygMvs" allowFullScreen width={"max"} height={"max"}/></div>}
+                    description="Dijkstra's shortest path algorithm is used for determining the fastest route between two sectors (vertices), with sectors being connected by pairs of undirected teleporters (edges) that have a set teleportation time (edge weight). My variation also takes into account whether it would be faster to traverse over/under walls, which some units are capable of to varying degrees of efficiency. Notably, the current implementation ignores the time it takes to walk between two teleporter points when making comparisons, but includes that additional time in the final calculation. Blue: Unsearched, Yellow: Searched, Red: Shortest Path"
+                    link={<Link href="https://github.com/StumpmutS/AAT/blob/main/AAT/Assets/Battle/Sectors/SectorManager.cs" target="_blank">Code</Link>}
+                />
+                <HighlightCard 
                     title="Flight System" 
                     media={<Image className="showcaseImage" src={flightSystem} alt="Flight System"/>} 
                     description="Aerial pathing system using curves, calculus, and eggs"
@@ -65,7 +72,7 @@ export default function AnimalArmies() {
                 <HighlightCard 
                     title="Squirrels" 
                     media={<Image className="showcaseImage" src={gameplay} alt="Gameplay"/>} 
-                    description="Bullied squirrels"
+                    description="Bullied squirrels with VFX"
                 />
             </div>
         </div>

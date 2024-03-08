@@ -6,6 +6,7 @@ import donuts from "../../public/menacingDonutsProjectBright.png";
 import dragonWalk from "../../public/DragonWalkBright.gif";
 import map from "../../public/Map.png";
 import angryFace from "../../public/AngryFace.png";
+import FluidSim from "./fluid/fluid";
 
 export default function Additional() {
     return (
@@ -16,6 +17,7 @@ export default function Additional() {
             <HighlightCard title="Physics & Simulation" media={<Image className="showcaseImage" src={donuts} alt="Physics & Simulation"/>} description=""/>
             <HighlightCard title="AA Map" media={<Image className="showcaseImage" src={map} alt="AA Map"/>} description=""/>
             <HighlightCard title="Sculpting" media={<Image className="showcaseImage" src={angryFace} alt="Sculpting"/>} description=""/>
+            <HighlightCard title="JS Interactive Fluid Sim" media={<FluidSim/> }/>
         </div>
     );
 }

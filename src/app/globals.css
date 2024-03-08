@@ -5,12 +5,21 @@
 :root {
 }
 
+* {
+    z-index: 1;
+}
+
+body {
+    background-color: theme(colors.gray.900);
+}
+
 .showcaseImage {
     @apply object-fill rounded shadow-sm shadow-blue-950;
 }
 
 .pageBar {
-    @apply w-auto shadow-md z-50 relative shadow-black bg-cover bg-no-repeat;
+    z-index: calc(inherit + 50);
+    @apply w-auto shadow-md relative shadow-black bg-cover bg-no-repeat;
     height: 10%;
 }
 
@@ -112,4 +121,14 @@ h2, h3, p {
 
 .HF {
     @apply p-dcardDetail rounded bg-white;
+}
+
+.forcedBackground {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
 }

@@ -26,6 +26,7 @@ const DISPLAY_VELOCITY = false;
 
 const SOURCE_ADD_FACTOR = 1;
 const DENSITY_DIFFUSION_RATE = .0005;
+const DENSITY_DECAY_RATE = .3;
 
 const FORCE_ADD_FACTOR = 10000;
 const VELOCITY_DIFFUSION_RATE = .005;
@@ -48,6 +49,7 @@ function Fluid(props: {simScale: number}) {
         applySources(densityField, sources, dt);
         diffuseDensity(densityField, DENSITY_DIFFUSION_RATE, dt);
         advectDensity(densityField, velocityField, dt);
+        decayDensity(densityField, dt);
 
         const forces = initializeGrid<Vector2>(SIZE, () => new Vector2(0, 0));
         for (let i = 1; i <= N; i++) {
@@ -241,6 +243,14 @@ function advectVelocity(velocityField: Vector2[][], deltaTime: number) {
     }
 
     boundVelocity(velocityField);
+}
+
+function decayDensity(densityField: number[][], deltaTime: number) {
+    for (let i = 0; i < densityField.length; i++) {
+        for (let j = 0; j < densityField.length; j++) {
+            densityField[i][j] *= 1 - DENSITY_DECAY_RATE * deltaTime;
+        }
+    }
 }
 
 function projectVelocity(velocityField: Vector2[][]) {

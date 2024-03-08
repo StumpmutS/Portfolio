@@ -11,7 +11,7 @@ export default function FluidSim(props: {}) {
     const screenWidth = typeof window == "undefined" ? 1000 : window.innerWidth;
 
     return (
-        <div className="showcaseImage w-[100%] aspect-square"> 
+        <div className="showcaseImage w-[100%] aspect-square touch-none"> 
             <Canvas orthographic={true}>
                 <ambientLight intensity={1} />
                 <Fluid simScale={screenWidth / 5}/>

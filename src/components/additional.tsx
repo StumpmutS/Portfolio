@@ -7,6 +7,7 @@ import dragonWalk from "../../public/DragonWalkBright.gif";
 import map from "../../public/Map.png";
 import angryFace from "../../public/AngryFace.png";
 import FluidSim from "./fluid/fluid";
+import Link from "next/link";
 
 export default function Additional() {
     return (
@@ -17,7 +18,12 @@ export default function Additional() {
             <HighlightCard title="Physics & Simulation" media={<Image className="showcaseImage" src={donuts} alt="Physics & Simulation"/>} description=""/>
             <HighlightCard title="AA Map" media={<Image className="showcaseImage" src={map} alt="AA Map"/>} description=""/>
             <HighlightCard title="Sculpting" media={<Image className="showcaseImage" src={angryFace} alt="Sculpting"/>} description=""/>
-            <HighlightCard title="JS Interactive Fluid Sim" media={<FluidSim/> }/>
+            <HighlightCard 
+                title="JS Interactive Fluid Sim" 
+                media={<FluidSim/> }
+                description="Implementation based off of Jos Stam's Real-Time Fluid Dynamics for Games"
+                link={<Link href="http://graphics.cs.cmu.edu/nsp/course/15-464/Fall09/papers/StamFluidforGames.pdf" target="_blank">{"Jos Stam\'s Paper"}</Link>}
+            />
         </div>
     );
 }

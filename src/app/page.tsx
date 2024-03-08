@@ -4,8 +4,6 @@ import SectionHeader from "@/components/sectionHeader";
 import AnimalArmies from "@/components/animalArmies";
 import WorkExperience from "@/components/workExperience";
 import Additional from "@/components/additional";
-import FluidSim from "@/components/fluid/fluid";
-import HighlightCard from "@/components/highlightCard";
 
 export default function Home() {
     return (

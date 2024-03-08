@@ -6,10 +6,9 @@ import { Circle, Line } from "@react-three/drei";
 import { Canvas, MeshProps, ThreeEvent, useFrame } from "@react-three/fiber";
 import { Fragment, useState } from "react";
 import { Color, MeshBasicMaterial, Vector2, Vector3 } from "three";
-import { seededRandom } from "three/src/math/MathUtils.js";
 
 export default function FluidSim(props: {}) {
-    const screenWidth = window.innerWidth;
+    const screenWidth = typeof window == "undefined" ? 1000 : window.innerWidth;
 
     return (
         <div className="showcaseImage w-[100%] aspect-square"> 

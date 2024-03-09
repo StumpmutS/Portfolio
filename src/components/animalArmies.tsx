@@ -66,13 +66,13 @@ export default function AnimalArmies() {
                 <HighlightCard 
                     title="Shaders" 
                     media={<Image className="showcaseImage" src={shaders} alt="Shaders"/>} 
-                    description="Wrote shaders in HLSL for cel shading and transparency effects"
+                    description="Wrote shaders in HLSL for cel-shading and transparency effects"
                     link={<Link href="https://github.com/StumpmutS/AAT/blob/main/AAT/Assets/ThreeDArt/ToonStuff/Toon.shader" target="_blank">Code</Link>}
                 />
                 <HighlightCard 
                     title="Squirrels" 
                     media={<Image className="showcaseImage" src={gameplay} alt="Gameplay"/>} 
-                    description="Bullied squirrels with VFX"
+                    description="Bullied squirrels with VFX and monsters"
                 />
             </div>
         </div>

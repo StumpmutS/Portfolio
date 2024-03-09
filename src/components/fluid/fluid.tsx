@@ -33,7 +33,7 @@ const SOURCE_ADD_FACTOR = 1;
 const DENSITY_DIFFUSION_RATE = .0005;
 const DENSITY_DECAY_RATE = .3;
 
-const FORCE_ADD_FACTOR = 10000;
+const FORCE_ADD_FACTOR = 1000;
 const VELOCITY_DIFFUSION_RATE = .005;
 
 /** 
@@ -44,6 +44,7 @@ const VELOCITY_DIFFUSION_RATE = .005;
  */
 function Fluid(props: {simScale: number}) {
     const [rerender, setRerender] = useState(false);
+    const [prevHoveredCell, setPrevHoveredCell] = useState<Vector2>(new Vector2(N / 2 + 1, N / 2 + 1));
     const [hoveredCells, setHoveredCells] = useState<boolean[][]>(initializeGrid<boolean>(SIZE, () => false));
 
     useFrame((state, dt) => {
@@ -61,7 +62,7 @@ function Fluid(props: {simScale: number}) {
             for (let j = 1; j <= N; j++) {
                 if (!hoveredCells[i][j]) continue;
 
-                forces[i][j] = new Vector2(FORCE_ADD_FACTOR, 0);
+                forces[i][j] = new Vector2(i - prevHoveredCell.x, j - prevHoveredCell.y).multiplyScalar(FORCE_ADD_FACTOR);
             }
         }
 
@@ -98,6 +99,8 @@ function Fluid(props: {simScale: number}) {
                 }));
             }}
             cOnHoverStop={(event, ih, jh) => {
+                setPrevHoveredCell(new Vector2(ih, jh));
+
                 setHoveredCells(hoveredCells.map((row, ic) => {
                     return row.map(() => {
                         return false;

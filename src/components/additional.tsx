@@ -21,7 +21,7 @@ export default function Additional() {
             <HighlightCard 
                 title="JS Interactive Fluid Sim" 
                 media={<FluidSim/> }
-                description="Implementation based off of Jos Stam's Real-Time Fluid Dynamics for Games"
+                description="Inspired by Jos Stam's Paper: Real-Time Fluid Dynamics for Games"
                 link={<Link href="http://graphics.cs.cmu.edu/nsp/course/15-464/Fall09/papers/StamFluidforGames.pdf" target="_blank">{"Jos Stam\'s Paper"}</Link>}
             />
         </div>

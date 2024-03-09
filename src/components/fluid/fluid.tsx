@@ -29,7 +29,7 @@ const N = 32;
 const SIZE = N + 2;
 const DISPLAY_VELOCITY = false;
 
-const SOURCE_ADD_FACTOR = 1;
+const SOURCE_ADD_FACTOR = 3;
 const DENSITY_DIFFUSION_RATE = .0005;
 const DENSITY_DECAY_RATE = .3;
 

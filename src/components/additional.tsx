@@ -6,6 +6,7 @@ import donuts from "../../public/menacingDonutsProjectBright.png";
 import dragonWalk from "../../public/DragonWalkBright.gif";
 import map from "../../public/Map.png";
 import angryFace from "../../public/AngryFace.png";
+import physicsFactory from "../../public/PFGameplay.gif";
 import FluidSim from "./fluid/fluid";
 import Link from "next/link";
 
@@ -19,6 +20,12 @@ export default function Additional() {
                 link={<Link href="http://graphics.cs.cmu.edu/nsp/course/15-464/Fall09/papers/StamFluidforGames.pdf" target="_blank">{"Jos Stam\'s Paper"}</Link>}
             />
             <HighlightCard title="Procedural Texturing" media={<Image className="showcaseImage" src={serpent} alt="Procedural Texturing"/>} description=""/>
+            <HighlightCard 
+                title="Physics Factory" 
+                media={<Image className="showcaseImage" src={physicsFactory} alt="Physics Factory"/>} 
+                description="In development"
+                link={<Link href="https://github.com/StumpmutS/PhysicsFactory" target="_blank">Repository</Link>}
+            />
             <HighlightCard title="Sculpting" media={<Image className="showcaseImage" src={angryFace} alt="Sculpting"/>} description=""/>
             <HighlightCard title="AA Assets" media={<Image className="showcaseImage" src={aatScroll} alt="AA Assets"/>} description=""/>
             <HighlightCard title="Animation" media={<Image className="showcaseImage" src={dragonWalk} alt="Animation"/>} description=""/>

@@ -29,11 +29,11 @@ const N = 32;
 const SIZE = N + 2;
 const DISPLAY_VELOCITY = false;
 
-const SOURCE_ADD_FACTOR = 3;
+const SOURCE_ADD_FACTOR = 4;
 const DENSITY_DIFFUSION_RATE = .0005;
-const DENSITY_DECAY_RATE = .3;
+const DENSITY_DECAY_RATE = .4;
 
-const FORCE_ADD_FACTOR = 1000;
+const FORCE_ADD_FACTOR = 2000;
 const VELOCITY_DIFFUSION_RATE = .005;
 
 /** 
@@ -50,12 +50,15 @@ function Fluid(props: {simScale: number}) {
     useFrame((state, dt) => {
         setRerender(!rerender);
         if (hoveredCells.length == 0) return;
+
+        const dCopy = initializeGrid<number>(SIZE, (i, j) => densityField[i][j]);
+        const vCopy = initializeGrid<Vector2>(SIZE, (i, j) => velocityField[i][j]);
         
         const sources = initializeGrid<number>(SIZE, (i, j) => (hoveredCells[i][j]) && j <= N && j > 0 && i > 0 && i <= N ? SOURCE_ADD_FACTOR : 0);
-        applySources(densityField, sources, dt);
-        diffuseDensity(densityField, DENSITY_DIFFUSION_RATE, dt);
-        advectDensity(densityField, velocityField, dt);
-        decayDensity(densityField, dt);
+        applySources(dCopy, sources, dt);
+        diffuseDensity(dCopy, DENSITY_DIFFUSION_RATE, dt);
+        advectDensity(dCopy, vCopy, dt);
+        decayDensity(dCopy, dt);
 
         const forces = initializeGrid<Vector2>(SIZE, () => new Vector2(0, 0));
         for (let i = 1; i <= N; i++) {
@@ -66,14 +69,14 @@ function Fluid(props: {simScale: number}) {
             }
         }
 
-        applyForces(velocityField, forces, dt);
-        diffuseVelocity(velocityField, VELOCITY_DIFFUSION_RATE, dt);
-        projectVelocity(velocityField);
-        advectVelocity(velocityField, dt);
-        projectVelocity(velocityField);
+        applyForces(vCopy, forces, dt);
+        diffuseVelocity(vCopy, VELOCITY_DIFFUSION_RATE, dt);
+        projectVelocity(vCopy);
+        advectVelocity(vCopy, dt);
+        projectVelocity(vCopy);
 
-        setDensityField(densityField);
-        setVelocityField(velocityField);
+        setDensityField(dCopy);
+        setVelocityField(vCopy);
     });
 
     const [velocityField, setVelocityField] = useState(initializeGrid<Vector2>(SIZE, () => {
@@ -270,9 +273,9 @@ function projectVelocity(velocityField: Vector2[][]) {
     for (let i = 1; i <= N; i++) {
         for (let j = 1; j <= N; j++) {
             divergence[i][j] = (
-                velocityField[i][j + 1].x - velocityField[i][j - 1].x +
+                velocityField[i + 1][j].x - velocityField[i - 1][j].x +
                 velocityField[i][j + 1].y - velocityField[i][j - 1].y
-            ) * h / 2;
+            ) / 2;
         }
     }
 
@@ -290,8 +293,8 @@ function projectVelocity(velocityField: Vector2[][]) {
     
     for (let i = 1; i <= N; i++) {
         for (let j = 1; j <= N; j++) {
-            velocityField[i][j].x = (p[i + 1][j] - p[i - 1][j]) / 2 / h;
-            velocityField[i][j].y = (p[i][j + 1] - p[i][j - 1]) / 2 / h;
+            velocityField[i][j].x = (p[i + 1][j] - p[i - 1][j]) / 2 ;
+            velocityField[i][j].y = (p[i][j + 1] - p[i][j - 1]) / 2 ;
         }
     }
 
@@ -299,12 +302,24 @@ function projectVelocity(velocityField: Vector2[][]) {
 }
 
 function boundVelocity(velocityField: Vector2[][]) {
-    for (let i = 0; i < SIZE; i++) {
-        velocityField[i][0] = new Vector2(0);
-        velocityField[0][i] = new Vector2(0);
-        velocityField[i][N + 1] = new Vector2(0);
-        velocityField[N + 1][i] = new Vector2(0);
+    for (let i = 1; i < SIZE - 1; i++) {
+        velocityField[i][0] = new Vector2(velocityField[i][1].x, velocityField[i][1].y);
+        velocityField[0][i] = new Vector2(velocityField[1][i].x, velocityField[1][i].y);
+        velocityField[i][N + 1] = new Vector2(velocityField[i][N].x, velocityField[i][N].y);
+        velocityField[N + 1][i] = new Vector2(velocityField[N][i].x, velocityField[N][i].y);
     }
+    velocityField[0][0] = new Vector2(
+        (velocityField[1][0].x + velocityField[0][1].x) / 2, 
+        (velocityField[1][0].y + velocityField[0][1].y) / 2);
+    velocityField[0][N + 1] = new Vector2(
+        (velocityField[1][N + 1].x + velocityField[0][N].x) / 2, 
+        (velocityField[1][N + 1].y + velocityField[0][N].y) / 2);
+    velocityField[N + 1][0] = new Vector2(
+        (velocityField[N][0].x + velocityField[N + 1][1].x) / 2, 
+        (velocityField[N][0].y + velocityField[N + 1][1].y) / 2);
+    velocityField[N + 1][N + 1] = new Vector2(
+        (velocityField[N][N + 1].x + velocityField[N + 1][N].x) / 2, 
+        (velocityField[N][N + 1].y + velocityField[N + 1][N].y) / 2);
 }
 
 type hoverFunc = (event: ThreeEvent<PointerEvent>, row: number, column: number) => void;

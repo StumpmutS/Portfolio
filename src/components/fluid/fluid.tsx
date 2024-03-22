@@ -19,7 +19,7 @@ export default function FluidSim(props: {}) {
         <div className="showcaseImage w-[100%] aspect-square touch-none"> 
             <Canvas orthographic={true}>
                 <ambientLight intensity={1} />
-                <Fluid simScale={screenWidth / 5}/>
+                <Fluid simScale={screenWidth / 7}/>
             </Canvas>
         </div>
     );

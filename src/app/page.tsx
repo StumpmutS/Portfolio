@@ -8,10 +8,10 @@ import Additional from "@/components/additional";
 export default function Home() {
     return (
         <div>
-            <div className="pageBar bg-[url('../../public/stacked-waves-haikei.png')]">
+            <div className="pageBar headerBg">
                 <Drew className="p-dmain"/>
             </div>
-            <div className="p-dmain flex flex-col gap-dmain">
+            <div className="py-dmain pageMargin flex flex-col gap-dmain">
                 <SectionHeader header="Professional Experience"/>
                 <SectionContent>
                     <WorkExperience />
@@ -27,7 +27,7 @@ export default function Home() {
                     <Additional />
                 </SectionContent>
             </div>
-            <div className="mirrorV pageBar bg-[url('../../public/stacked-waves-haikei.png')]">
+            <div className="mirrorV pageBar headerBg">
                 <Drew className="mirrorV p-dmain"/>
             </div>
         </div>

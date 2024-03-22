@@ -17,6 +17,11 @@ body {
     @apply object-fill rounded shadow-sm shadow-blue-950;
 }
 
+canvas {
+    position: absolute;
+    left: 1px;
+}
+
 .pageBar {
     z-index: calc(inherit + 50);
     @apply w-auto shadow-md relative shadow-black bg-cover bg-no-repeat;
@@ -65,24 +70,25 @@ a:hover {
 h1 {
     font-size: 6vw;
     font-weight: 500;
-    @apply text-[#000];
+    @apply text-[#e8e8e8];
 }
 
 h2 {
-    font-size: clamp(1rem, 4.5vw, 4.5vw);
+    font-size: clamp(1rem, 4.5vw, 3rem);
     font-weight: 500;
+    @apply text-[#e8e8e8];
 }
 
 h3 {
-    font-size: clamp(.8rem, 2.5vw, 2.5vw);
+    font-size: clamp(.8rem, 2.5vw, 1.5rem);
     font-weight: 500;
 }
 
 p {
-    font-size: clamp(.6rem, 1.25vw, 1.25vw);
+    font-size: clamp(.6rem, 1.25vw, 1rem);
 }
 
-h2, h3, p {
+h3, p {
     @apply text-gray-900;
 }
 
@@ -119,6 +125,16 @@ h2, h3, p {
     @apply shadow-sm rounded shadow-black bg-cover bg-no-repeat
 }
 
+.standardBg {
+    background-image: radial-gradient(theme(colors.gray.600), theme(colors.gray.600));
+    @apply shadow-sm rounded shadow-black bg-cover bg-no-repeat
+}
+
+.headerBg {
+    background-image: radial-gradient(theme(colors.gray.700), theme(colors.gray.700));
+    @apply shadow-sm rounded shadow-black bg-cover bg-no-repeat
+}
+
 .HF {
     @apply p-dcardDetail rounded bg-white;
 }
@@ -131,4 +147,14 @@ h2, h3, p {
     top: 0;
     left: 0;
     z-index: 0;
+}
+
+.pageMargin {
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.sectionContent {
+    margin-left: 2vw;
+    margin-right: 2vw;
 }

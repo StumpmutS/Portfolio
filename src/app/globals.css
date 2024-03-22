@@ -132,7 +132,7 @@ h3, p {
 
 .headerBg {
     background-image: radial-gradient(theme(colors.gray.700), theme(colors.gray.700));
-    @apply shadow-sm rounded shadow-black bg-cover bg-no-repeat
+    @apply shadow-sm shadow-black bg-cover bg-no-repeat
 }
 
 .HF {

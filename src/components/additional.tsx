@@ -6,7 +6,7 @@ import donuts from "../../public/menacingDonutsProjectBright.png";
 import dragonWalk from "../../public/DragonWalkBright.gif";
 import map from "../../public/Map.png";
 import angryFace from "../../public/AngryFace.png";
-import physicsFactory from "../../public/PFGameplay.gif";
+import physicsFactory from "../../public/PhysicsFactoryShowCase.gif";
 import FluidSim from "./fluid/fluid";
 import Link from "next/link";
 

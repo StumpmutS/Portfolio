@@ -10,7 +10,7 @@ export default function Drew(props: {className?: string}) {
         <div className={props.className}>
             <div className="drewContainer">
                 <div className="drew flex-none relative">
-                    <Image className="object-fill border-dmain border-gray-200" src={headshot} alt="Drew headshot"/>
+                    <Image className="rounded-full object-fill border-dmain border-gray-200" src={headshot} alt="Drew headshot"/>
                 </div>
                 <h1>Drew</h1>
                 <h1>Moulton</h1>

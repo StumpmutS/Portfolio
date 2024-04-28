@@ -6,7 +6,11 @@ export function useDimensions(ref: RefObject<HTMLElement>) {
     () => JSON.stringify({
       width: ref.current?.offsetWidth ?? 0,
       height: ref.current?.offsetHeight ?? 0,
-    })
+    }),
+    () => JSON.stringify({
+      width: ref.current?.offsetWidth ?? 0,
+      height: ref.current?.offsetHeight ?? 0,
+    }),
   );
 
   return useMemo(() => JSON.parse(dimensions), [dimensions]);

@@ -5,7 +5,7 @@ import hitfactor from "../../public/hitfactor-logo.png";
 
 export default function WorkExperience() {
     return (
-        <div className="grid grid-cols-2 auto-rows-min gap-dmain">
+        <div className="grid grid-cols-1 md:grid-cols-2 auto-rows-min gap-dmain">
             <HighlightCard 
                 bg="HF" title="Software Engineer Intern Jun-Aug 2021" 
                 media={<Link href="https://hitfactor.com" target="_blank"><Image className="HF showcaseImage" src={hitfactor} alt="Hit Factor Logo"/></Link>} 

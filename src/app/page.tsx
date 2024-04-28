@@ -11,7 +11,7 @@ export default function Home() {
             <div className="pageBar headerBg">
                 <Drew className="p-dmain"/>
             </div>
-            <div className="py-dmain pageMargin flex flex-col gap-dmain">
+            <div className="py-dmain mx-[5vw] md:mx-[10vw] lg:mx-[15vw] 2xl:mx-[20vw] flex flex-col gap-dmain">
                 <SectionHeader header="Professional Experience"/>
                 <SectionContent>
                     <WorkExperience />

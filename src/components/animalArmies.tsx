@@ -15,7 +15,7 @@ export default function AnimalArmies() {
     return (
         <div>
             <SectionHeader header="Animal Armies" className="mb-dmain"/>
-            <div className="grid grid-cols-3 auto-rows-min gap-dmain">
+            <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-min gap-dmain">
                 <HighlightCard 
                     title="Networking"
                     media={<div className="videoWrapper"><iframe className="showcaseImage" src="https://www.youtube.com/embed/wGrG0AuZLIs" allowFullScreen width={"max"} height={"max"}/></div>}
@@ -34,7 +34,7 @@ export default function AnimalArmies() {
                     description="Developed a solid foundational knowledge of 3D principles by learning how to model, texture, rig, and animate assets in Blender, then tie in everything on the art side with the gameplay"
                 />
                 <HighlightCard 
-                    className="col-span-3"
+                    className="col-span-1 md:col-span-3"
                     title="Dijkstra Shortest Path Variation"
                     media={<div className="videoWrapper"><iframe className="showcaseImage" src="https://www.youtube.com/embed/UMd4voygMvs" allowFullScreen width={"max"} height={"max"}/></div>}
                     description="Dijkstra's shortest path algorithm is used for determining the fastest route between two sectors (vertices), with sectors being connected by pairs of undirected teleporters (edges) that have a set teleportation time (edge weight). My variation also takes into account whether it would be faster to traverse over/under walls, which some units are capable of to varying degrees of efficiency. Notably, the current implementation ignores the time it takes to walk between two teleporter points when making comparisons, but includes that additional time in the final calculation. Blue: Unsearched, Yellow: Searched, Red: Shortest Path"

@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function Additional() {
     return (
-        <div className="grid grid-cols-3 auto-rows-min gap-dmain">
+        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-min gap-dmain">
             <HighlightCard 
                 title="JS Interactive Fluid Sim" 
                 media={<FluidSim/> }

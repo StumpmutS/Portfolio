@@ -5,21 +5,23 @@
 
 "use client";
 
+import { useDimensions } from "@/hooks/useDimensions";
 import { initializeGrid } from "@/lib/collectionHelpers";
 import { clamp, lerp } from "@/lib/math";
 import { Circle, Line } from "@react-three/drei";
 import { Canvas, MeshProps, ThreeEvent, useFrame } from "@react-three/fiber";
-import { Fragment, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import { Color, MeshBasicMaterial, Vector2, Vector3 } from "three";
 
 export default function FluidSim(props: {}) {
-    const screenWidth = typeof window == "undefined" ? 1000 : window.innerWidth;
+    const ref = useRef(null);
+    const {width} = useDimensions(ref);
 
     return (
-        <div className="showcaseImage w-[100%] aspect-square touch-none"> 
+        <div ref={ref} className="showcaseImage w-[100%] aspect-square touch-none"> 
             <Canvas orthographic={true}>
                 <ambientLight intensity={1} />
-                <Fluid simScale={screenWidth / 7}/>
+                <Fluid simScale={width * .8}/>
             </Canvas>
         </div>
     );
@@ -43,12 +45,10 @@ const VELOCITY_DIFFUSION_RATE = .005;
  * second term is diffusion, third term is increase in density due to sources
  */
 function Fluid(props: {simScale: number}) {
-    const [rerender, setRerender] = useState(false);
     const [prevHoveredCell, setPrevHoveredCell] = useState<Vector2>(new Vector2(N / 2 + 1, N / 2 + 1));
     const [hoveredCells, setHoveredCells] = useState<boolean[][]>(initializeGrid<boolean>(SIZE, () => false));
 
     useFrame((state, dt) => {
-        setRerender(!rerender);
         if (hoveredCells.length == 0) return;
 
         const dCopy = initializeGrid<number>(SIZE, (i, j) => densityField[i][j]);
@@ -85,7 +85,6 @@ function Fluid(props: {simScale: number}) {
     const [densityField, setDensityField] = useState(initializeGrid<number>(SIZE, () => 0));
     
     let cells: JSX.Element[] = [];
-    const offset = window.innerWidth / 256;
 
     densityField.forEach((row, i) => row.forEach((density, j) => {
         cells.push(
@@ -93,7 +92,7 @@ function Fluid(props: {simScale: number}) {
             row={i}
             column={j}
             cOnHover={(event, ih, jh) => {
-                if (ih == 0 || ih == N + 1 || jh == 0 || jh == N + 1) return;
+                if (ih == 0 || ih == SIZE - 1 || jh == 0 || jh == SIZE - 1) return;
 
                 setHoveredCells(hoveredCells.map((row, ic) => {
                     return row.map((cell, jc) => {
@@ -110,10 +109,10 @@ function Fluid(props: {simScale: number}) {
                     });
                 }));
             }}
-            color={new Color(lerp(0, 255, j / N), 50, lerp(255, 0, j / N)).multiplyScalar(density)}
-            cellScale={new Vector3(props.simScale / (N), props.simScale / (N), 1)}
+            color={new Color(lerp(0, 255, j / (SIZE - 1)), 50, lerp(255, 0, j / (SIZE - 1))).multiplyScalar(density)}
+            cellScale={new Vector3(props.simScale / (SIZE - 1), props.simScale / (SIZE - 1), 1)}
             key={`${i} ${j}`} 
-            pos={new Vector2(i * props.simScale / N - props.simScale / 2 - offset, j * props.simScale / N - props.simScale / 2 - offset)} 
+            pos={new Vector2(i * props.simScale / (SIZE - 1) - props.simScale / 2, j * props.simScale / (SIZE - 1) - props.simScale / 2)} 
             velocity={velocityField[i][j]}
         />);
     }));

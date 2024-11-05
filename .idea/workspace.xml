@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="928a240a-69a4-4961-abd1-71fbb8b35edb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/fluid/defaults.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fluid/fluid.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fluid/initialization/gl-program.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fluid/initialization/initializer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fluid/initialization/pointer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fluid/types/behaviors.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fluid/types/color-formats.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fluid/types/frame-buffer-object.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fluid/types/rgb.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fluid/types/texture.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fluid/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/In-White-128@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/github-mark-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mail-2569.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/additional.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/additional.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/drew.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/drew.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/fluid/fluid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/fluid/ts-fluid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useDimensions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useRefDimensions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2iG2nD9tXEgbkeJ6g5UYKodj6Sh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "jsx.switch.disabled": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Development/Personal/Portfolio/drew-moulton-portfolio/src/hooks",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "show.migrate.to.gradle.popup": "false",
+    "ts.external.directory.path": "C:\\Development\\Personal\\Portfolio\\drew-moulton-portfolio\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Development\Personal\Portfolio\drew-moulton-portfolio\src\hooks" />
+      <recent name="C:\Development\Personal\Portfolio\drew-moulton-portfolio\public" />
+      <recent name="C:\Development\Personal\Portfolio\drew-moulton-portfolio\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Development\Personal\Portfolio\drew-moulton-portfolio\src\components\fluid" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="928a240a-69a4-4961-abd1-71fbb8b35edb" name="Changes" comment="" />
+      <created>1719102758096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719102758096</updated>
+      <workItem from="1719102759374" duration="56000" />
+      <workItem from="1719103799653" duration="816000" />
+      <workItem from="1719186868428" duration="443000" />
+      <workItem from="1722327896107" duration="117000" />
+      <workItem from="1722809763668" duration="5401000" />
+      <workItem from="1724085813953" duration="453000" />
+      <workItem from="1724221554372" duration="6000" />
+      <workItem from="1728332245188" duration="9994000" />
+      <workItem from="1728932717412" duration="18000" />
+      <workItem from="1729317219678" duration="4371000" />
+      <workItem from="1729539098761" duration="20705000" />
+      <workItem from="1730150351602" duration="12204000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

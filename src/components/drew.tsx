@@ -1,28 +1,23 @@
 import Image from "next/image";
 import headshot from "../../public/DrewMoultonHeadshotCropped.jpeg";
-import github from "../../public/github-mark-white.png";
-import linkedin from "../../public/In-White-128@2x.png";
-import mail from "../../public/mail-2569.png";
 import Link from "next/link";
+import {FaEnvelope, FaGithub, FaLinkedin} from "react-icons/fa6";
+import colors from "tailwindcss/colors";
 
 export default function Drew(props: {className?: string}) {
     return (
         <div className={props.className}>
-            <div className="drewContainer">
-                <div className="drew flex-none relative">
-                    <Image className="rounded-full object-fill border-dmain border-gray-200" src={headshot} alt="Drew headshot"/>
-                </div>
-                <h1>Drew</h1>
-                <h1>Moulton</h1>
-                <div className="flex-grow"></div>
+            <div className="drewContainer justify-center backdrop-blur-xl flex py-2 items-center gap-dmain flex-wrap md:flex-nowrap">
+                <h1 className={"text-gray-900 basis-full text-center"}>Drew Moulton</h1>
+                <div className="hidden md:flex-grow md:block"></div>
                 <Link className="drewIcon flex-none relative" href={"https://github.com/StumpmutS"} target="_blank">
-                    <Image src={github} alt="GitHub"/>
+                    <FaGithub color={colors.gray["900"]} size={"auto"}/>
                 </Link>
                 <Link className="drewIcon flex-none relative" href={"https://www.linkedin.com/in/drew-moulton"} target="_blank">
-                    <Image src={linkedin} alt="LinkedIn"/>
+                    <FaLinkedin color={colors.gray["900"]} size={"auto"} />
                 </Link>
                 <Link className="drewIcon mr-[5%] flex-none relative" href={"mailto:drew.m.moulton@gmail.com"} target="_blank">
-                    <Image src={mail} alt="Mail"/>
+                    <FaEnvelope color={colors.gray["900"]} size={"auto"} />
                 </Link>
             </div>
         </div>

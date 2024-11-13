@@ -1,6 +1,6 @@
 import { RefObject, useMemo, useSyncExternalStore } from "react";
 
-export function useDimensions(ref: RefObject<HTMLElement>) {
+export function useRefDimensions(ref: RefObject<HTMLElement>) {
   const dimensions = useSyncExternalStore(
     subscribe,
     () => JSON.stringify({

@@ -7,7 +7,7 @@ import dragonWalk from "../../public/DragonWalkBright.gif";
 import map from "../../public/Map.png";
 import angryFace from "../../public/AngryFace.png";
 import physicsFactory from "../../public/PhysicsFactoryShowCase.gif";
-import FluidSim from "./fluid/fluid";
+import FluidSim from "./fluid/ts-fluid";
 import Link from "next/link";
 
 export default function Additional() {
@@ -15,7 +15,7 @@ export default function Additional() {
         <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-min gap-dmain">
             <HighlightCard 
                 title="JS Interactive Fluid Sim" 
-                media={<FluidSim/> }
+                media={ <FluidSim /> }
                 description="Inspired by Jos Stam's Paper: Real-Time Fluid Dynamics for Games"
                 link={<Link href="http://graphics.cs.cmu.edu/nsp/course/15-464/Fall09/papers/StamFluidforGames.pdf" target="_blank">{"Jos Stam\'s Paper"}</Link>}
             />

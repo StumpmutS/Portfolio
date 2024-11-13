@@ -5,29 +5,30 @@
 
 "use client";
 
-import { useDimensions } from "@/hooks/useDimensions";
+import { useRefDimensions } from "@/hooks/useRefDimensions";
 import { initializeGrid } from "@/lib/collectionHelpers";
 import { clamp, lerp } from "@/lib/math";
 import { Circle, Line } from "@react-three/drei";
 import { Canvas, MeshProps, ThreeEvent, useFrame } from "@react-three/fiber";
 import { Fragment, useRef, useState } from "react";
 import { Color, MeshBasicMaterial, Vector2, Vector3 } from "three";
+import {useInView} from "@react-spring/core";
 
 export default function FluidSim(props: {}) {
-    const ref = useRef(null);
-    const {width} = useDimensions(ref);
+    const [viewRef, inView] = useInView();
+    const {width} = useRefDimensions(viewRef);
 
     return (
-        <div ref={ref} className="showcaseImage w-[100%] aspect-square touch-none"> 
-            <Canvas orthographic={true}>
+        <div ref={viewRef} className="showcaseImage w-[100%] aspect-square touch-none">
+            <Canvas className={"absolute left-[1px]"} orthographic={true}>
                 <ambientLight intensity={1} />
-                <Fluid simScale={width * .8}/>
+                <Fluid simScale={width * .8} shouldAnimate={inView}/>
             </Canvas>
         </div>
     );
 }
 
-const N = 32;
+const N = 26;
 const SIZE = N + 2;
 const DISPLAY_VELOCITY = false;
 
@@ -36,7 +37,7 @@ const DENSITY_DIFFUSION_RATE = .0005;
 const DENSITY_DECAY_RATE = .4;
 
 const FORCE_ADD_FACTOR = 2000;
-const VELOCITY_DIFFUSION_RATE = .005;
+const VELOCITY_DIFFUSION_RATE = .001;
 
 /** 
  * Grid spacing is 1/N
@@ -44,12 +45,12 @@ const VELOCITY_DIFFUSION_RATE = .005;
  * ϱ is density, first term: density should follow velocity field, 
  * second term is diffusion, third term is increase in density due to sources
  */
-function Fluid(props: {simScale: number}) {
+function Fluid(props: {simScale: number, shouldAnimate: boolean}) {
     const [prevHoveredCell, setPrevHoveredCell] = useState<Vector2>(new Vector2(N / 2 + 1, N / 2 + 1));
     const [hoveredCells, setHoveredCells] = useState<boolean[][]>(initializeGrid<boolean>(SIZE, () => false));
 
     useFrame((state, dt) => {
-        if (hoveredCells.length == 0) return;
+        if (!props.shouldAnimate || hoveredCells.length == 0) return;
 
         const dCopy = initializeGrid<number>(SIZE, (i, j) => densityField[i][j]);
         const vCopy = initializeGrid<Vector2>(SIZE, (i, j) => velocityField[i][j]);
@@ -152,7 +153,7 @@ function applyForces(field: Vector2[][], forces: Vector2[][], deltaTime: number)
 function diffuseDensity(field: number[][], rate: number, deltaTime: number) {
     const diffusionAmount = rate * deltaTime * N * N;
 
-    for (let gs = 0; gs < 16; gs++) {
+    for (let gs = 0; gs < 8; gs++) {
         for (let i = 1; i <= N; i++) {
             for (let j = 1; j <= N; j++) {
                 field[i][j] = 
@@ -170,7 +171,7 @@ function diffuseDensity(field: number[][], rate: number, deltaTime: number) {
 function diffuseVelocity(field: Vector2[][], rate: number, deltaTime: number) {
     const diffusionAmount = rate * deltaTime * N * N;
 
-    for (let gs = 0; gs < 16; gs++) {
+    for (let gs = 0; gs < 8; gs++) {
         for (let i = 1; i <= N; i++) {
             for (let j = 1; j <= N; j++) {
                 field[i][j] = new Vector2(
@@ -278,7 +279,7 @@ function projectVelocity(velocityField: Vector2[][]) {
         }
     }
 
-    for (let gs = 0; gs < 16; gs++) {
+    for (let gs = 0; gs < 8; gs++) {
         for (let i = 1; i <= N; i++) {
             for (let j = 1; j <= N; j++) {
                 p[i][j] = (

@@ -5,12 +5,12 @@ const config: Config = {
   theme: {
     extend: {
       spacing: {
-        dmain: "2vw",
-        dcard: "3vw",
-        dcardDetail: "1.5vw"
+        dmain: "32px",
+        dcard: "24px",
+        dcardDetail: "12px"
       },
       borderWidth: {
-        dmain: ".4vw"
+        dmain: "4px"
       }
     }
   },

@@ -1,5 +1,5 @@
 import Drew from "../components/drew";
-import SectionContent from "@/components/SectionContent";
+import SectionContent from "@/components/sectionContent";
 import SectionHeader from "@/components/sectionHeader";
 import AnimalArmies from "@/components/animalArmies";
 import WorkExperience from "@/components/workExperience";
@@ -30,7 +30,7 @@ export default function Home() {
                 <SectionContent>
                     <Additional/>
                 </SectionContent>
-                <div className={"ink-text"}>Books: "Body found floating by the docks..."</div>
+                <div className={"ink-text"}>{"Books: \"Body found floating by the docks...\""}</div>
             </div>
         </div>
     );

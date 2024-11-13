@@ -1,4 +1,4 @@
-import SectionContent from "./SectionContent";
+import SectionContent from "./sectionContent";
 import HighlightCard from "./highlightCard";
 import SectionHeader from "./sectionHeader"
 

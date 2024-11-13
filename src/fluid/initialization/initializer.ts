@@ -751,13 +751,24 @@ export function activator(canvas: HTMLCanvasElement, webGL: WebGL2RenderingConte
         };
     }
 
-    canvas.addEventListener('mousemove', e => {
+    canvas.addEventListener("mousemove", e => {
         pointers[0].moved = true;
         pointers[0].dx = (e.offsetX - pointers[0].x) * 5.0;
         pointers[0].dy = (e.offsetY - pointers[0].y) * 5.0;
         pointers[0].x = e.offsetX;
         pointers[0].y = e.offsetY;
     });
+
+    canvas.addEventListener("touchmove", e => {
+        for (let i = 0; i < e.touches.length; i++) {
+            const touch = e.touches[i];
+            const mouseEvent = new MouseEvent("mousemove", {
+                clientX: touch.clientX,
+                clientY: touch.clientY,
+            });
+            canvas.dispatchEvent(mouseEvent);
+        }
+    }, false);
 }
 
 /**
